@@ -100,6 +100,11 @@ h1:hover {
   section {
     width: 330px;
   }
+  .illustration-article {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+  }
 
   .tag {
     font-size: var(--fs-12);
