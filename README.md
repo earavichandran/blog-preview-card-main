@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Blog preview card challenge-Github](https://github.com/earavichandran/blog-preview-card-main)
+- Live Site URL: [Blog preview card challenge](https://blog-preview-card-main-nine-iota.vercel.app/)
 
 ## My process
 
