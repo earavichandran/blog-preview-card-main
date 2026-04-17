@@ -75,6 +75,13 @@ h1:hover {
   color: var(--color-yellow);
 }
 
+h1:focus {
+  color: var(--color-yellow);
+}
+h1:focus-visible {
+  color: var(--color-yellow);
+}
+
 .content {
   margin-top: 1rem;
   font-size: var(--fs-16);
