@@ -1,6 +1,6 @@
 # Frontend Mentor - Blog preview card solution
 
-This is a solution to the [Blog preview card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Blog preview card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -11,13 +11,8 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-  - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -29,15 +24,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Desktop View](./screenshot/desktop_view.png)
+![Desktop View Active state](./screenshot/desktop_active_state.png)
+![Mobile view](./screenshot/mobile_view.png)
 
 ### Links
 
@@ -51,71 +40,187 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+Using this challenge, I learned how to center a card and flexbox properties.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<body>
+  <main>
+    <section>
+      <picture>
+        <img
+          class="illustration-article"
+          src="/assets/images/illustration-article.svg"
+          alt="illustration-article"
+        />
+      </picture>
+      <p class="tag">Learning</p>
+      <p class="published_date">Published 21 Dec 2023</p>
+      <h1>HTML & CSS foundations</h1>
+      <p class="content">
+        These languages are the backbone of every website, defining structure,
+        content, and presentation.
+      </p>
+      <div class="author">
+        <img
+          src="/assets/images/image-avatar.webp"
+          alt="image-avatar"
+          class="image-avatar"
+        />
+        <p class="author_name">Greg Hooper</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/earavichandran">@earavichandran</a>.
+  </footer>
+</body>
 ```
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+:root {
+  --color-yellow: hsl(47, 88%, 63%);
+  --color-dark: hsl(0, 0%, 7%);
+  --color-grey: hsl(0, 0%, 42%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --ff-primary: "Figtree", san-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 800;
+
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-22: 1.375rem;
+  --fs-24: 1.5rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--color-yellow);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 375px;
+  background-color: var(--color-white);
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid black;
+  box-shadow: 8px 8px black;
+}
+
+.illustration-article {
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+.tag {
+  display: inline;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  background-color: var(--color-yellow);
+  color: var(--color-dark);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-14);
+}
+.published_date {
+  margin-top: 1.25rem;
+  font-size: var(--fs-14);
+}
+
+h1 {
+  margin-top: 1rem;
+  font-size: var(--fs-24);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+h1:hover {
+  color: var(--color-yellow);
+}
+
+.content {
+  margin-top: 1rem;
+  font-size: var(--fs-16);
+  color: var(--color-grey);
+  line-height: 1.4;
+}
+
+.author {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0 0.5rem 0;
+}
+.image-avatar {
+  width: 2rem;
+}
+.author_name {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-bold);
+}
+
+@media (max-width: 375px) {
+  section {
+    width: 330px;
+  }
+  .illustration-article {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+  }
+
+  .tag {
+    font-size: var(--fs-12);
+  }
+  .published_date {
+    font-size: var(--fs-12);
+  }
+  h1 {
+    font-size: var(--fs-22);
+  }
+  .content {
+    font-size: var(--fs-14);
+  }
+}
+.attribution {
+  margin-top: 1.5rem;
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-### AI Collaboration
-
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
-
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
-
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
-
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@earavichandran](https://www.frontendmentor.io/profile/earavichandran)
+- Github - [@earavichandran](https://github.com/earavichandran)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I thank the frontend mentor for creating this challenge. I thank Brad Travesy, Jonas Schmedtmann, Kevin Powel, Colt Steele for their excellent courses in Udemy and Youtube. I learned lot from them.
